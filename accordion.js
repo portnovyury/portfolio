@@ -1,17 +1,23 @@
-// Скрипт используется на сайте http://richflow.ru/catalog - для меню-аккордеона в сайдбаре на внутренних страницах
-// скрипт ищет в крошках активную ссылку, и на основании нее открывает необходимый раздел в аккордеоне
-// работает при подключенном jQuery
+/**
+* This is an accordeon menu script, which is used for inner pages of http://richflow.ru/
+* It looks for an active link in breadcrumbs, and based upon it opens related section at menu
+* Requires jQuery to work
+* 
+* Скрипт используется на сайте http://richflow.ru/catalog - для меню-аккордеона в сайдбаре на внутренних страницах
+* скрипт ищет в крошках активную ссылку, и на основании нее открывает необходимый раздел в аккордеоне
+* работает при подключенном jQuery
+*/
 
 $(document).ready(function() {
     $(function () {
-        var location = window.location.href;      // берем начальный урл
-        var cur_url = location.split('/');        // разбиваем его на массив по частям
-        var short_url = cur_url.splice(3, 7);     // удаляем http://site.ru/
-        var end_url = '/' + short_url.join('/');  // склеиваем остатки и добавляем начальный слеш
+        var location = window.location.href;      // take initial url
+        var cur_url = location.split('/');        // split it to array
+        var short_url = cur_url.splice(3, 7);     // remove http://site.ru/
+        var end_url = '/' + short_url.join('/');  // merge the rest and add starting slash
 
-        var crumb = $('.crumbs .item-2 a').attr("href");  // смотрим активный раздел по крошкам
-        var crumb_first = $('.crumbs .item-1 a').attr("href");  // смотрим активный раздел по первому элементу крошек
-        var crumb_name = $('.crumbs .item-1 span').html();  // смотрим активный раздел по первому элементу крошек
+        var crumb = $('.crumbs .item-2 a').attr("href");
+        var crumb_first = $('.crumbs .item-1 a').attr("href"); 
+        var crumb_name = $('.crumbs .item-1 span').html();  
 
         var accItems = $('.accordion-item ul a');
         accItems.each(function () {
