@@ -1,7 +1,10 @@
 /**
- * несложный калькулятор цены, работает на основе jquery ui slider
- * пример работы - https://rw-design.ru/stoimost/
- * */
+* simple price calculator, works on jquery ui slider
+* example here - https://rw-design.ru/stoimost/
+*
+* несложный калькулятор цены, работает на основе jquery ui slider
+* пример работы - https://rw-design.ru/stoimost/
+* */
 
 $(function() {
     $("#re_slider").slider({
