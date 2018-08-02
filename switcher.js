@@ -1,4 +1,9 @@
 /**
+ * Plugin for switching phones depending on the town
+ * Remembers selected town
+ * Requires jQuery to work
+ * Markup sample can be found here http://metallurg.opexu.net/ (the header)
+ * 
  * Плагин для переключения номеров телефонов по городам. 
  * Запоминает выбранный город.
  * Для работы нужен jquery
